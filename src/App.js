@@ -35,12 +35,8 @@ comecar(){
   }
   else{
     this.timer = setInterval(()=>{
-      state.milissegundos+=1;
+      state.segundos+=1;
 
-      if(state.milissegundos === 59){
-        state.segundos+=1;
-        state.milissegundos =0;
-      }
 
       if(state.segundos === 59){
         state.minutos +=1;
@@ -52,7 +48,7 @@ comecar(){
       }
       
       this.setState(state);
-    },100)
+    },1000)
     state.botao = 'Pausar';
   }
   
@@ -99,11 +95,6 @@ limpar(){
           <div className="timer-single">
             <h2>{this.state.segundos}</h2>
             <p>Segundos</p>
-          </div>{/* timer-single */}
-
-          <div className="timer-single">
-            <h2>{this.state.milissegundos}</h2>
-            <p>milissegundos</p>
           </div>{/* timer-single */}
 
         </div>{/*box-timer*/}
